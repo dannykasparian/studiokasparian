@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Initialize position on load
+    // NOTE: Auto-slide is DISABLED - carousel only moves on user interaction
     updateSlider();
     
     // Responsive slider update
