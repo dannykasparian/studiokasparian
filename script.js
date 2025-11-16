@@ -75,9 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Auto-slide (optional)
-    setInterval(nextSlide, 5000);
-
     // Initialize position on load
     updateSlider();
     
