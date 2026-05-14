@@ -1,4 +1,13 @@
 /* Reset and Base Styles */
+:root {
+    --color-green: #019301;
+    --color-green-dark: #007500;
+    --color-ink: #0D0D0D;
+    --shadow-soft: 0 18px 55px rgba(0, 0, 0, 0.12);
+    --shadow-lifted: 0 26px 70px rgba(0, 0, 0, 0.18);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -1151,6 +1160,329 @@ img {
 .contact-link,
 .social-link {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Professional polish and motion */
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.section-title,
+.stat-number,
+.service-title,
+.feature-title,
+.cta-title,
+.technology-title,
+.schedule-title {
+    letter-spacing: 0;
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.25) 45%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 0.55s var(--ease-out);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:hover::after {
+    transform: translateX(120%);
+}
+
+.btn-primary {
+    box-shadow: 0 12px 24px rgba(1, 147, 1, 0.22);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 18px 34px rgba(1, 117, 1, 0.28);
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.88);
+    border-bottom-color: rgba(13, 13, 13, 0.28);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(12px);
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(37, 37, 37, 0.94);
+    backdrop-filter: blur(18px);
+    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.navbar.nav-scrolled {
+    background-color: rgba(13, 13, 13, 0.9);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
+}
+
+.logo-img {
+    transition: transform 0.35s var(--ease-out);
+}
+
+.logo-img:hover {
+    transform: scale(1.025);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 2px;
+    background: var(--color-green);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.28s var(--ease-out);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #9AE59A;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.contact-popover,
+.info-popover {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px) scale(0.98);
+    box-shadow: var(--shadow-soft);
+    transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s var(--ease-out);
+}
+
+.contact-popover.show,
+.info-popover.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.hero {
+    overflow: hidden;
+    background-position: center calc(50% + var(--hero-shift, 0px));
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 180px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.36));
+    pointer-events: none;
+}
+
+.hero-overlay {
+    background:
+        radial-gradient(circle at 50% 42%, rgba(1, 147, 1, 0.14), transparent 34%),
+        linear-gradient(135deg, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0.42) 100%);
+}
+
+.hero-content {
+    animation: heroIntro 900ms var(--ease-out) both;
+}
+
+.about-img,
+.team-image,
+.map-img,
+.schedule-table {
+    box-shadow: var(--shadow-soft);
+}
+
+.attention-img,
+.cta-img {
+    box-shadow: var(--shadow-lifted);
+}
+
+.services {
+    background: linear-gradient(180deg, #252525 0%, #151515 100%);
+}
+
+.service-card {
+    background-color: rgba(255, 255, 255, 0.035);
+    transition: transform 0.35s var(--ease-out), border-color 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    background-color: rgba(255, 255, 255, 0.075);
+    border-color: rgba(154, 229, 154, 0.55);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+.attention-details {
+    background: linear-gradient(180deg, #050505 0%, #101510 100%);
+}
+
+.feature-item,
+.contact-item {
+    padding: 18px;
+    border-radius: 16px;
+    transition: transform 0.3s var(--ease-out), background-color 0.3s ease;
+}
+
+.feature-item:hover,
+.contact-item:hover {
+    transform: translateX(6px);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.team-cards {
+    transition: transform 0.55s var(--ease-out);
+}
+
+.team-card {
+    transition: transform 0.35s var(--ease-out);
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+}
+
+.team-img {
+    transition: transform 0.55s var(--ease-out), filter 0.35s ease;
+}
+
+.team-card:hover .team-img {
+    transform: scale(1.045);
+    filter: saturate(1.06) contrast(1.04);
+}
+
+.dot {
+    appearance: none;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s var(--ease-out), width 0.3s var(--ease-out);
+}
+
+.dot.active {
+    width: 22px;
+    border-radius: 99px;
+}
+
+.slider-arrow {
+    transition: transform 0.25s var(--ease-out), background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.slider-arrow:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+.cta {
+    background: linear-gradient(135deg, #252525 0%, #151515 100%);
+}
+
+.technology {
+    background-position: center calc(50% + var(--tech-shift, 0px));
+}
+
+.technology-overlay {
+    background:
+        radial-gradient(circle at 50% 42%, rgba(1, 147, 1, 0.16), transparent 36%),
+        linear-gradient(135deg, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0.42) 100%);
+}
+
+img {
+    image-rendering: auto;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+}
+
+.reveal.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+
+.reveal-stagger.animate-in > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-stagger.animate-in > *:nth-child(2) {
+    transition-delay: 80ms;
+}
+
+.reveal-stagger.animate-in > *:nth-child(3) {
+    transition-delay: 160ms;
+}
+
+.reveal-stagger.animate-in > *:nth-child(4) {
+    transition-delay: 240ms;
+}
+
+section {
+    scroll-margin-top: 96px;
+}
+
+@keyframes heroIntro {
+    from {
+        opacity: 0;
+        transform: translateY(26px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal,
+    .reveal-stagger > * {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* Responsive Design */

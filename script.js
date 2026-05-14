@@ -1,5 +1,7 @@
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     // Smooth scrolling for anchor links
     const navLinks = document.querySelectorAll('a[href^="#"]');
     
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetSection) {
                 targetSection.scrollIntoView({
-                    behavior: 'smooth',
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth',
                     block: 'start'
                 });
             }
@@ -32,28 +34,51 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth <= 1200 && window.innerWidth > 768) cardsPerView = 2;
     if (window.innerWidth <= 768) cardsPerView = 1;
     
+    function getMaxSlide() {
+        return Math.max(0, totalCards - cardsPerView);
+    }
+
+    function syncSliderDots() {
+        if (!teamCards || !sliderDots.length) return;
+        const dotsContainer = sliderDots[0].parentElement;
+        if (!dotsContainer) return;
+
+        dotsContainer.innerHTML = '';
+        for (let index = 0; index <= getMaxSlide(); index++) {
+            const dot = document.createElement('button');
+            dot.className = `dot${index === currentSlide ? ' active' : ''}`;
+            dot.type = 'button';
+            dot.setAttribute('aria-label', `Vai al gruppo ${index + 1}`);
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlider();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+
     function updateSlider() {
         if (!teamCards || !teamViewport) return;
         const card = teamCards.children[0];
         const cardWidth = card.getBoundingClientRect().width;
         const gap = parseFloat(getComputedStyle(teamCards).gap) || 0;
+        currentSlide = Math.min(currentSlide, getMaxSlide());
         const offset = currentSlide * (cardWidth + gap);
         teamCards.style.transform = `translateX(${-offset}px)`;
 
-        // Update dots to reflect current page (optional, keep first n)
-        sliderDots.forEach((dot, index) => {
+        document.querySelectorAll('.slider-dots .dot').forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
         });
     }
     
     function nextSlide() {
-        const maxSlide = Math.max(0, totalCards - cardsPerView);
+        const maxSlide = getMaxSlide();
         currentSlide = currentSlide >= maxSlide ? 0 : currentSlide + 1;
         updateSlider();
     }
     
     function prevSlide() {
-        const maxSlide = Math.max(0, totalCards - cardsPerView);
+        const maxSlide = getMaxSlide();
         currentSlide = currentSlide === 0 ? maxSlide : currentSlide - 1;
         updateSlider();
     }
@@ -67,16 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
         prevButton.addEventListener('click', prevSlide);
     }
     
-    // Dot navigation
-    sliderDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSlide = index;
-            updateSlider();
-        });
-    });
-    
     // Initialize position on load
     // NOTE: Auto-slide is DISABLED - carousel only moves on user interaction
+    syncSliderDots();
     updateSlider();
     
     // Responsive slider update
@@ -85,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (newCardsPerView !== cardsPerView) {
             cardsPerView = newCardsPerView;
             currentSlide = 0;
+            syncSliderDots();
             updateSlider();
         }
     });
@@ -181,6 +200,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Polished scroll effects
+    const navbar = document.querySelector('.navbar');
+    const sections = document.querySelectorAll('section[id]');
+    const hero = document.querySelector('.hero');
+    const technology = document.querySelector('.technology');
+
+    const onScroll = debounce(() => {
+        const scrollY = window.scrollY || window.pageYOffset;
+        if (navbar) {
+            navbar.classList.toggle('nav-scrolled', scrollY > 24);
+        }
+
+        if (!prefersReducedMotion) {
+            if (hero) hero.style.setProperty('--hero-shift', `${Math.min(scrollY * 0.08, 44)}px`);
+            if (technology) {
+                const techTop = technology.getBoundingClientRect().top + scrollY;
+                const techShift = Math.max(-36, Math.min(36, (scrollY - techTop) * 0.08));
+                technology.style.setProperty('--tech-shift', `${techShift}px`);
+            }
+        }
+
+        let currentSectionId = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            if (scrollY >= sectionTop) currentSectionId = section.id;
+        });
+
+        navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${currentSectionId}`);
+        });
+    }, 12);
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
     // Scroll animations
     const observerOptions = {
         threshold: 0.1,
@@ -195,8 +249,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
+    const revealElements = document.querySelectorAll('.section-header, .about-text, .about-image, .attention-text, .attention-image, .cta-text, .cta-image, .technology-content, .contact-map, .schedule-table');
+    revealElements.forEach(el => el.classList.add('reveal'));
+
+    const staggerElements = document.querySelectorAll('.services-grid, .attention-features, .team-cards, .contact-info');
+    staggerElements.forEach(el => el.classList.add('reveal-stagger'));
+
     // Observe elements for animation
-    const animateElements = document.querySelectorAll('.service-card, .team-card, .contact-item');
+    const animateElements = document.querySelectorAll('.reveal, .reveal-stagger, .service-card, .team-card, .contact-item');
     animateElements.forEach(el => {
         observer.observe(el);
     });
