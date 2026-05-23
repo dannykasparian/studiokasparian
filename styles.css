@@ -1453,6 +1453,10 @@ section {
     scroll-margin-top: 96px;
 }
 
+[data-view][hidden] {
+    display: none !important;
+}
+
 @keyframes heroIntro {
     from {
         opacity: 0;
