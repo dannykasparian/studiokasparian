@@ -2,22 +2,67 @@
 document.addEventListener('DOMContentLoaded', function() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Smooth scrolling for anchor links
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    
-    navLinks.forEach(link => {
+    // View routing and smooth scrolling for anchor links
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const routedLinks = document.querySelectorAll('a[href^="#"]');
+    const viewSections = document.querySelectorAll('[data-view]');
+    let activeView = 'home';
+    let activeTarget = '#home';
+
+    function setActiveNav(targetId) {
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            const isActive = href === targetId || (targetId === '#contact' && href === '#contact');
+            link.classList.toggle('active', isActive);
+        });
+    }
+
+    function switchView(viewName, targetId = '#home', updateHash = true) {
+        activeView = viewName;
+        activeTarget = targetId;
+        document.body.dataset.activeView = viewName;
+
+        viewSections.forEach(section => {
+            section.hidden = section.dataset.view !== viewName;
+        });
+
+        if (updateHash && window.location.hash !== targetId) {
+            history.pushState(null, '', targetId);
+        }
+
+        const targetSection = document.querySelector(targetId);
+        const scrollTarget = targetSection && !targetSection.hidden ? targetSection : document.querySelector(`[data-view="${viewName}"]`);
+
+        if (scrollTarget) {
+            scrollTarget.scrollIntoView({
+                behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                block: 'start'
+            });
+        }
+
+        setActiveNav(targetId === '#contact' ? '#contact' : `#${viewName}`);
+
+        if (viewName === 'team') {
+            window.requestAnimationFrame(updateSlider);
+        }
+    }
+
+    routedLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: prefersReducedMotion ? 'auto' : 'smooth',
-                    block: 'start'
-                });
+            if (targetId === '#about') {
+                switchView('about', '#about');
+                return;
             }
+
+            if (targetId === '#team') {
+                switchView('team', '#team');
+                return;
+            }
+
+            switchView('home', targetId);
         });
     });
 
@@ -221,8 +266,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        let currentSectionId = '';
+        if (activeView !== 'home') {
+            setActiveNav(`#${activeView}`);
+            return;
+        }
+
+        let currentSectionId = activeTarget === '#contact' ? 'contact' : 'home';
         sections.forEach(section => {
+            if (section.hidden) return;
             const sectionTop = section.offsetTop - 120;
             if (scrollY >= sectionTop) currentSectionId = section.id;
         });
@@ -234,6 +285,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('popstate', () => {
+        const hash = window.location.hash || '#home';
+        if (hash === '#about') {
+            switchView('about', '#about', false);
+        } else if (hash === '#team') {
+            switchView('team', '#team', false);
+        } else {
+            switchView('home', hash, false);
+        }
+    });
 
     // Scroll animations
     const observerOptions = {
@@ -260,6 +321,15 @@ document.addEventListener('DOMContentLoaded', function() {
     animateElements.forEach(el => {
         observer.observe(el);
     });
+
+    const initialHash = window.location.hash || '#home';
+    if (initialHash === '#about') {
+        switchView('about', '#about', false);
+    } else if (initialHash === '#team') {
+        switchView('team', '#team', false);
+    } else {
+        switchView('home', initialHash, false);
+    }
 });
 
 // Utility functions
