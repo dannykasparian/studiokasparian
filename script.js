@@ -6,13 +6,44 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
     const routedLinks = document.querySelectorAll('a[href^="#"]');
     const viewSections = document.querySelectorAll('[data-view]');
+    const treatmentViews = new Set([
+        'treatment-prevenzione',
+        'treatment-chirurgia',
+        'treatment-ortodonzia',
+        'treatment-sonno'
+    ]);
     let activeView = 'home';
     let activeTarget = '#home';
+
+    function getViewForTarget(targetId) {
+        const normalizedTarget = targetId === '#treatments' ? '#treatment-prevenzione' : targetId;
+        const viewName = normalizedTarget.replace('#', '');
+
+        if (viewName === 'about' || viewName === 'team' || treatmentViews.has(viewName)) {
+            return {
+                targetId: normalizedTarget,
+                viewName
+            };
+        }
+
+        return {
+            targetId: normalizedTarget,
+            viewName: 'home'
+        };
+    }
+
+    function getNavTarget(viewName, targetId) {
+        if (treatmentViews.has(viewName)) return '#treatments';
+        if (viewName === 'about') return '#about';
+        if (viewName === 'team') return '#team';
+        if (targetId === '#contact') return '#contact';
+        return '#home';
+    }
 
     function setActiveNav(targetId) {
         navLinks.forEach(link => {
             const href = link.getAttribute('href');
-            const isActive = href === targetId || (targetId === '#contact' && href === '#contact');
+            const isActive = href === targetId;
             link.classList.toggle('active', isActive);
         });
     }
@@ -40,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        setActiveNav(targetId === '#contact' ? '#contact' : `#${viewName}`);
+        setActiveNav(getNavTarget(viewName, targetId));
 
         if (viewName === 'team') {
             window.requestAnimationFrame(updateSlider);
@@ -52,17 +83,8 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
 
             const targetId = this.getAttribute('href');
-            if (targetId === '#about') {
-                switchView('about', '#about');
-                return;
-            }
-
-            if (targetId === '#team') {
-                switchView('team', '#team');
-                return;
-            }
-
-            switchView('home', targetId);
+            const route = getViewForTarget(targetId);
+            switchView(route.viewName, route.targetId);
         });
     });
 
@@ -267,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (activeView !== 'home') {
-            setActiveNav(`#${activeView}`);
+            setActiveNav(getNavTarget(activeView, activeTarget));
             return;
         }
 
@@ -287,13 +309,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('popstate', () => {
         const hash = window.location.hash || '#home';
-        if (hash === '#about') {
-            switchView('about', '#about', false);
-        } else if (hash === '#team') {
-            switchView('team', '#team', false);
-        } else {
-            switchView('home', hash, false);
-        }
+        const route = getViewForTarget(hash);
+        switchView(route.viewName, route.targetId, false);
     });
 
     // Scroll animations
@@ -310,10 +327,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.section-header, .about-text, .about-image, .attention-text, .attention-image, .cta-text, .cta-image, .technology-content, .contact-map, .schedule-table');
+    const revealElements = document.querySelectorAll('.section-header, .about-text, .about-image, .treatment-intro, .treatment-panel, .attention-text, .attention-image, .cta-text, .cta-image, .technology-content, .contact-map, .schedule-table');
     revealElements.forEach(el => el.classList.add('reveal'));
 
-    const staggerElements = document.querySelectorAll('.services-grid, .attention-features, .team-cards, .contact-info');
+    const staggerElements = document.querySelectorAll('.services-grid, .treatment-points, .attention-features, .team-cards, .contact-info');
     staggerElements.forEach(el => el.classList.add('reveal-stagger'));
 
     // Observe elements for animation
@@ -323,13 +340,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const initialHash = window.location.hash || '#home';
-    if (initialHash === '#about') {
-        switchView('about', '#about', false);
-    } else if (initialHash === '#team') {
-        switchView('team', '#team', false);
-    } else {
-        switchView('home', initialHash, false);
-    }
+    const initialRoute = getViewForTarget(initialHash);
+    switchView(initialRoute.viewName, initialRoute.targetId, false);
 });
 
 // Utility functions

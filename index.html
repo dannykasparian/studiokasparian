@@ -19,12 +19,18 @@
                 </div>
                 <div class="nav-links">
                     <a href="#home" class="nav-link">Home</a>
+                    <div class="nav-dropdown treatments-dropdown">
+                        <a href="#treatments" class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Trattamenti</a>
+                        <div class="nav-submenu" aria-label="Sottosezioni trattamenti">
+                            <a href="#treatment-prevenzione" class="nav-submenu-link">Prevenzione e Igiene</a>
+                            <a href="#treatment-chirurgia" class="nav-submenu-link">Chirurgia orale</a>
+                            <a href="#treatment-ortodonzia" class="nav-submenu-link">Ortodonzia</a>
+                            <a href="#treatment-sonno" class="nav-submenu-link">Medicina del sonno</a>
+                        </div>
+                    </div>
                     <a href="#team" class="nav-link">Team</a>
                     <a href="#about" class="nav-link">Chi siamo</a>
-                    <div class="nav-dropdown">
-                        <a href="#contact" class="nav-link">Contatti</a>
-                        
-                    </div>
+                    <a href="#contact" class="nav-link">Contatti</a>
                 </div>
             </div>
             <div class="nav-actions">
@@ -95,6 +101,151 @@
                 </div>
                 <div class="about-image">
                     <img src="images/about-image.png" alt="Studio Kasparian" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatment Detail Sections -->
+    <section class="treatment-detail" id="treatment-prevenzione" data-view="treatment-prevenzione" hidden>
+        <div class="container">
+            <div class="treatment-layout">
+                <div class="treatment-intro">
+                    <span class="tagline">Trattamenti</span>
+                    <h2 class="section-title">Prevenzione e Igiene</h2>
+                    <p class="section-description">
+                        La prevenzione moderna combina igiene professionale, controllo del biofilm, istruzioni personalizzate e richiami calibrati sul rischio individuale.
+                    </p>
+                </div>
+                <div class="treatment-panel">
+                    <h3 class="treatment-heading">Metodi all'avanguardia</h3>
+                    <div class="treatment-points">
+                        <article class="treatment-point">
+                            <h4>Protocolli guidati dal rischio</h4>
+                            <p>Le linee guida EFP indicano un percorso progressivo: controllo dei fattori di rischio, igiene domiciliare mirata, strumentazione professionale e mantenimento periodico.</p>
+                        </article>
+                        <article class="treatment-point">
+                            <h4>Biofilm control e richiami personalizzati</h4>
+                            <p>La pulizia professionale viene integrata con strumenti sonici/ultrasonici, motivazione all'igiene e controlli programmati in base a gengive, tartaro e predisposizione del paziente.</p>
+                        </article>
+                        <article class="treatment-point">
+                            <h4>Fluoro, sigillature e prevenzione carie</h4>
+                            <p>Quando indicato, fluoro professionale e sigillature aiutano a ridurre il rischio di carie nelle superfici più vulnerabili.</p>
+                        </article>
+                    </div>
+                    <div class="treatment-sources">
+                        <span>Fonti:</span>
+                        <a href="https://www.efp.org/publications-education/clinical-practice-guideline/" target="_blank" rel="noopener">EFP guideline</a>
+                        <a href="https://www.ada.org/resources/research/science-and-research-institute/oral-health-topics/fluoride" target="_blank" rel="noopener">ADA fluoro</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="treatment-detail" id="treatment-chirurgia" data-view="treatment-chirurgia" hidden>
+        <div class="container">
+            <div class="treatment-layout">
+                <div class="treatment-intro">
+                    <span class="tagline">Trattamenti</span>
+                    <h2 class="section-title">Chirurgia orale</h2>
+                    <p class="section-description">
+                        La chirurgia orale moderna punta a diagnosi precisa, pianificazione digitale e interventi meno invasivi, con attenzione a comfort e guarigione.
+                    </p>
+                </div>
+                <div class="treatment-panel">
+                    <h3 class="treatment-heading">Metodi all'avanguardia</h3>
+                    <div class="treatment-points">
+                        <article class="treatment-point">
+                            <h4>Scan 3D della testa e del distretto orale</h4>
+                            <p>La CBCT, o TAC cone beam, permette una visione tridimensionale di denti, ossa, seni mascellari e strutture nervose, utile nella pianificazione di estrazioni complesse, impianti e chirurgia guidata.</p>
+                        </article>
+                        <article class="treatment-point">
+                            <h4>Chirurgia guidata digitalmente</h4>
+                            <p>I dati 3D possono essere usati per valutare volumi ossei, traiettorie implantari e rapporti anatomici prima dell'intervento, migliorando precisione e prevedibilità.</p>
+                        </article>
+                        <article class="treatment-point">
+                            <h4>Tecniche mini-invasive</h4>
+                            <p>Quando il caso lo consente, l'approccio mini-invasivo riduce trauma sui tessuti, tempi operatori e fastidio post-operatorio.</p>
+                        </article>
+                    </div>
+                    <div class="treatment-sources">
+                        <span>Fonti:</span>
+                        <a href="https://www.aaomr.org/" target="_blank" rel="noopener">AAOMR</a>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4233862/" target="_blank" rel="noopener">CBCT in odontoiatria</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="treatment-detail" id="treatment-ortodonzia" data-view="treatment-ortodonzia" hidden>
+        <div class="container">
+            <div class="treatment-layout">
+                <div class="treatment-intro">
+                    <span class="tagline">Trattamenti</span>
+                    <h2 class="section-title">Ortodonzia</h2>
+                    <p class="section-description">
+                        L'ortodonzia contemporanea usa diagnosi digitale, simulazioni e dispositivi personalizzati per correggere allineamento, funzione e stabilità del sorriso.
+                    </p>
+                </div>
+                <div class="treatment-panel">
+                    <h3 class="treatment-heading">Metodi all'avanguardia</h3>
+                    <div class="treatment-points">
+                        <article class="treatment-point">
+                            <h4>Allineatori trasparenti Invisalign</h4>
+                            <p>Gli allineatori Invisalign sono mascherine trasparenti rimovibili progettate digitalmente per spostare gradualmente i denti, con una pianificazione virtuale del trattamento.</p>
+                        </article>
+                        <article class="treatment-point">
+                            <h4>Scanner intraorale e impronte digitali</h4>
+                            <p>La scansione digitale riduce la necessità di impronte tradizionali e consente modelli 3D utili per diagnosi, monitoraggio e comunicazione con il paziente.</p>
+                        </article>
+                        <article class="treatment-point">
+                            <h4>Pianificazione estetico-funzionale</h4>
+                            <p>Le tecnologie digitali permettono di valutare non solo l'estetica, ma anche occlusione, spazi, rapporti dentali e stabilità finale.</p>
+                        </article>
+                    </div>
+                    <div class="treatment-sources">
+                        <span>Fonti:</span>
+                        <a href="https://www.invisalign.com/how-invisalign-works" target="_blank" rel="noopener">Invisalign</a>
+                        <a href="https://aaoinfo.org/whats-trending/what-are-clear-aligners/" target="_blank" rel="noopener">AAO clear aligners</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="treatment-detail" id="treatment-sonno" data-view="treatment-sonno" hidden>
+        <div class="container">
+            <div class="treatment-layout">
+                <div class="treatment-intro">
+                    <span class="tagline">Trattamenti</span>
+                    <h2 class="section-title">Medicina del sonno</h2>
+                    <p class="section-description">
+                        La medicina odontoiatrica del sonno si occupa di russamento e apnee ostruttive, in collaborazione con il medico specialista quando serve una diagnosi completa.
+                    </p>
+                </div>
+                <div class="treatment-panel">
+                    <h3 class="treatment-heading">Metodi all'avanguardia</h3>
+                    <div class="treatment-points">
+                        <article class="treatment-point">
+                            <h4>Dispositivi orali su misura</h4>
+                            <p>Le linee guida AASM/AADSM indicano dispositivi di avanzamento mandibolare personalizzati come opzione terapeutica per pazienti selezionati con apnea ostruttiva del sonno o russamento.</p>
+                        </article>
+                        <article class="treatment-point">
+                            <h4>Valutazione clinica e digitale</h4>
+                            <p>La visita odontoiatrica valuta arcate, articolazione mandibolare, usura dentale e spazio orale; la scansione digitale può aiutare nella progettazione del dispositivo.</p>
+                        </article>
+                        <article class="treatment-point">
+                            <h4>Follow-up e regolazione progressiva</h4>
+                            <p>Il dispositivo viene controllato e regolato nel tempo per migliorare comfort, efficacia e aderenza al trattamento.</p>
+                        </article>
+                    </div>
+                    <div class="treatment-sources">
+                        <span>Fonti:</span>
+                        <a href="https://jcsm.aasm.org/doi/10.5664/jcsm.4858" target="_blank" rel="noopener">AASM/AADSM guideline</a>
+                        <a href="https://www.nhlbi.nih.gov/health/sleep-apnea/treatment" target="_blank" rel="noopener">NHLBI sleep apnea</a>
+                    </div>
                 </div>
             </div>
         </div>

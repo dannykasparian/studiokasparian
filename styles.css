@@ -180,9 +180,67 @@ h4 {
 }
 
 .nav-dropdown {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 4px;
+}
+
+.nav-dropdown-trigger::before {
+    content: "";
+    position: absolute;
+    inset: -20px -12px;
+}
+
+.nav-submenu {
+    position: absolute;
+    top: calc(100% + 18px);
+    left: 50%;
+    width: 260px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 14px;
+    background: rgba(13, 13, 13, 0.94);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 8px);
+    transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s var(--ease-out);
+    z-index: 100;
+}
+
+.nav-submenu::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    height: 20px;
+}
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.nav-submenu-link {
+    display: block;
+    padding: 11px 12px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 1.25;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s var(--ease-out);
+}
+
+.nav-submenu-link:hover,
+.nav-submenu-link:focus {
+    color: #9AE59A;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(3px);
 }
 
 .chevron-down {
@@ -555,6 +613,94 @@ section {
     display: flex;
     gap: 16px;
     justify-content: center;
+}
+
+/* Treatment Detail Sections */
+.treatment-detail {
+    min-height: calc(100vh - 80px);
+    background: #FFFFFF;
+    padding: 112px 0;
+}
+
+.treatment-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 72px;
+    align-items: start;
+}
+
+.treatment-intro {
+    position: sticky;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.treatment-intro .section-title,
+.treatment-intro .section-description {
+    text-align: left;
+}
+
+.treatment-panel {
+    padding: 40px;
+    border: 1px solid #E0E0E0;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F7F9F7 100%);
+    box-shadow: var(--shadow-soft);
+}
+
+.treatment-heading {
+    color: #0D0D0D;
+    font-size: 32px;
+    margin-bottom: 28px;
+}
+
+.treatment-points {
+    display: grid;
+    gap: 18px;
+}
+
+.treatment-point {
+    padding: 22px;
+    border: 1px solid rgba(1, 147, 1, 0.16);
+    border-radius: 14px;
+    background: #FFFFFF;
+}
+
+.treatment-point h4 {
+    color: #0D0D0D;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 8px;
+}
+
+.treatment-point p {
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.treatment-sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 28px;
+    color: #4A4A4A;
+    font-size: 14px;
+}
+
+.treatment-sources a {
+    color: var(--color-green);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.treatment-sources a:hover {
+    color: var(--color-green-dark);
 }
 
 /* Attention to Details Section */
@@ -1507,6 +1653,15 @@ section {
         grid-template-columns: repeat(2, 1fr);
         gap: 32px;
     }
+
+    .treatment-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .treatment-intro {
+        position: static;
+    }
     
     .team-cards {
         display: flex;
@@ -1558,6 +1713,18 @@ section {
     
     .nav-links {
         gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-submenu {
+        left: 0;
+        transform: translateY(8px);
+    }
+
+    .nav-dropdown:hover .nav-submenu,
+    .nav-dropdown:focus-within .nav-submenu {
+        transform: translateY(0);
     }
     
     .logo {
@@ -1595,6 +1762,14 @@ section {
     .services-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+    }
+
+    .treatment-detail {
+        padding: 80px 0;
+    }
+
+    .treatment-panel {
+        padding: 24px;
     }
     
     .team-cards {
