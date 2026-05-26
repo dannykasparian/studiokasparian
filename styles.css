@@ -164,15 +164,23 @@ h4 {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 28px;
+    flex-wrap: nowrap;
 }
 
 .nav-link {
+    appearance: none;
+    background: transparent;
+    border: 0;
     color: #FFFFFF;
     text-decoration: none;
     font-size: 16px;
     font-weight: 400;
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 1.5;
+    cursor: pointer;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -181,20 +189,27 @@ h4 {
 
 .nav-dropdown {
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 4px;
 }
 
-.nav-dropdown-trigger::before {
-    content: "";
-    position: absolute;
-    inset: -20px -12px;
+.nav-dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+}
+
+.nav-dropdown-trigger::after {
+    content: "⌄";
+    font-size: 14px;
+    line-height: 1;
+    transform: translateY(-1px);
 }
 
 .nav-submenu {
     position: absolute;
-    top: calc(100% + 18px);
+    top: calc(100% + 14px);
     left: 50%;
     width: 260px;
     padding: 10px;
@@ -206,6 +221,7 @@ h4 {
     visibility: hidden;
     transform: translate(-50%, 8px);
     transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s var(--ease-out);
+    pointer-events: none;
     z-index: 100;
 }
 
@@ -223,6 +239,7 @@ h4 {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, 0);
+    pointer-events: auto;
 }
 
 .nav-submenu-link {

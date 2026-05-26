@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // View routing and smooth scrolling for anchor links
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
     const routedLinks = document.querySelectorAll('a[href^="#"]');
+    const treatmentTrigger = document.querySelector('.nav-dropdown-trigger');
     const viewSections = document.querySelectorAll('[data-view]');
     const treatmentViews = new Set([
         'treatment-prevenzione',
@@ -87,6 +88,13 @@ document.addEventListener('DOMContentLoaded', function() {
             switchView(route.viewName, route.targetId);
         });
     });
+
+    if (treatmentTrigger) {
+        treatmentTrigger.addEventListener('click', () => {
+            const route = getViewForTarget('#treatments');
+            switchView(route.viewName, route.targetId);
+        });
+    }
 
     // Team slider functionality
     const teamCards = document.querySelector('.team-cards');
