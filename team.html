@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Team · Studio Kasparian</title>
+    <meta name="description" content="Lo staff dello Studio Kasparian: odontoiatri, igienista, assistente alla poltrona e segreteria.">
+    <meta name="theme-color" content="#0A0A0A">
+    <meta property="og:title" content="Team · Studio Kasparian">
+    <meta property="og:description" content="Lo staff dello Studio Kasparian: odontoiatri, igienista, assistente alla poltrona e segreteria.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://studiokasparian.com/images/opt/hero-1920.webp">
+    <script>
+        document.documentElement.classList.add('js');
+        /* una transizione tra pagine interrotta (scheda in secondo piano) non è un errore */
+        ['pagereveal', 'pageswap'].forEach(function (name) {
+            addEventListener(name, function (e) {
+                if (e.viewTransition) { e.viewTransition.ready.catch(function () {}); e.viewTransition.finished.catch(function () {}); }
+            });
+        });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body data-page="team">
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+
+    <header class="nav" data-nav>
+        <div class="nav__wrap">
+            <a class="logo" href="index.html" aria-label="Studio Kasparian, torna alla home">
+                <img src="images/opt/logo-mark.webp" alt="Dr. Chant Kasparian" width="943" height="75"><span>studio odontoiatrico</span>
+            </a>
+            <nav class="nav__links" aria-label="Principale">
+                <a class="nav__link" href="index.html">Home</a>
+                <a class="nav__link" href="trattamenti.html">Trattamenti</a>
+                <a class="nav__link" href="chi-siamo.html">Chi siamo</a>
+                <a class="nav__link" href="team.html" aria-current="page">Team</a>
+                <a class="nav__link" href="contatti.html">Contatti</a>
+            </nav>
+            <div class="nav__actions">
+                <a class="nav__tel" href="tel:+390421658834" aria-label="Chiama lo studio: 0421 658834">0421 658834</a>
+                <a class="btn btn--primary" href="contatti.html">Prenota</a>
+            </div>
+            <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu">
+                <span></span><span></span>
+            </button>
+        </div>
+        <div class="menu" id="menu" hidden>
+            <nav class="menu__links" aria-label="Menu">
+                <a href="index.html">Home</a>
+                <a href="trattamenti.html">Trattamenti</a>
+                <a href="chi-siamo.html">Chi siamo</a>
+                <a href="team.html" aria-current="page">Team</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+            <div class="menu__actions">
+                <a class="btn btn--primary btn--lg" href="contatti.html">Prenota una visita</a>
+                <a class="btn btn--outline btn--lg" href="tel:+390421658834">Chiama 0421 658834</a>
+            </div>
+        </div>
+    </header>
+    <main id="contenuto">
+        <section class="page-head" data-reveal>
+            <div class="wrap page-head__grid">
+                <h1 class="h1" data-lines>Il nostro team, <span class="dim">professione e conoscenza.</span></h1>
+                <p class="lead after">Tutto lo staff dello studio dentistico.</p>
+            </div>
+        </section>
+
+        <section class="section section--line" style="padding-top: 72px;" data-reveal>
+            <div class="wrap people">
+                <article class="member">
+                    <div class="member__photo"><img src="images/opt/team-chant.webp" alt="Chant Kasparian, odontoiatra" width="900" height="900"></div>
+                    <h2 class="member__name">Chant Kasparian</h2>
+                    <p class="member__role">Odontoiatra</p>
+                    <p class="member__bio">Odontoiatra con più di 40 anni di esperienza. Laureato alla ULB (Université Libre de Bruxelles), apre lo studio più di 30 anni fa a Noventa. Master in Francia, Svizzera, USA e Svezia, vanta il premio come Dentista Nobel Biocare.</p>
+                </article>
+                <article class="member">
+                    <div class="member__photo member__photo--none" aria-hidden="true"><span>A</span></div>
+                    <h2 class="member__name">Alessia</h2>
+                    <p class="member__role">Odontoiatra</p>
+                    <p class="member__bio">Odontoiatra con 15 anni di esperienza, laureata all'Università di Padova, fa parte del team del nostro studio da oltre 10 anni.</p>
+                </article>
+                <article class="member">
+                    <div class="member__photo"><img src="images/opt/team-cristina.webp" alt="Cristina, coordinatrice gestionale" width="900" height="1200"></div>
+                    <h2 class="member__name">Cristina</h2>
+                    <p class="member__role">Coordinatrice gestionale</p>
+                    <p class="member__bio">Responsabile della gestione delle attività interne dello studio da oltre 20 anni.</p>
+                </article>
+                <article class="member">
+                    <div class="member__photo"><img src="images/opt/team-azzurra.webp" alt="Azzurra, assistente alla poltrona" width="900" height="1200"></div>
+                    <h2 class="member__name">Azzurra</h2>
+                    <p class="member__role">Assistente alla poltrona</p>
+                    <p class="member__bio">Assistente alla poltrona, attenta al benessere del paziente.</p>
+                </article>
+                <article class="member">
+                    <div class="member__photo"><img src="images/opt/team-alessia-cso.webp" alt="Alessia, cso" width="900" height="1200" loading="lazy"></div>
+                    <h2 class="member__name">Alessia</h2>
+                    <p class="member__role">CSO</p>
+                    <p class="member__bio">Collaboratrice dello studio odontoiatrico, responsabile segreteria.</p>
+                </article>
+                <article class="member">
+                    <div class="member__photo member__photo--none" aria-hidden="true"><span>A</span></div>
+                    <h2 class="member__name">Alvise</h2>
+                    <p class="member__role">Odontoiatra e odontotecnico</p>
+                    <p class="member__bio">Medico odontoiatra, ortodontista con oltre 30 anni di esperienza, specializzato in allineatori trasparenti e in interventi di chirurgia avanzata. Proprietario del Medical Center Padova.</p>
+                </article>
+                <article class="member">
+                    <div class="member__photo member__photo--none" aria-hidden="true"><span>C</span></div>
+                    <h2 class="member__name">Claudia</h2>
+                    <p class="member__role">Igienista dentale</p>
+                    <p class="member__bio">Igienista dentale diplomata, con particolare attenzione alla prevenzione ed esperienza nei trattamenti cosmetici (bleaching e sbiancamento).</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section--alt section--line" data-reveal>
+            <div class="wrap cta">
+                <div>
+                    <h2 class="h2" data-lines>Pronti a iniziare il tuo percorso di salute dentale?</h2>
+                    <p class="lead after">Prenota subito una visita di consulenza gratuita e scopri come possiamo migliorare il tuo sorriso.</p>
+                    <div class="cta__actions after">
+                        <a class="btn btn--primary btn--lg" href="contatti.html">Prenota ora</a>
+                        <a class="btn btn--outline btn--lg" href="tel:+390421658834">Chiama 0421 658834</a>
+                    </div>
+                </div>
+                <figure class="frame cta__frame">
+                    <img src="images/opt/segreteria.webp" alt="La segreteria dello studio al telefono" width="1180" height="921" loading="lazy">
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer__grid">
+            <a class="logo" href="index.html" aria-label="Studio Kasparian, torna alla home">
+                <img src="images/opt/logo-mark.webp" alt="Dr. Chant Kasparian" width="943" height="75" loading="lazy"><span>studio odontoiatrico</span>
+            </a>
+            <div class="footer__col">
+                <b>Studio</b>
+                <span>Via Roma 57, Noventa di Piave</span>
+                <a href="tel:+390421658834">+39 0421 658834</a>
+                <a href="mailto:studiokasparian@chant.it">studiokasparian@chant.it</a>
+            </div>
+            <div class="footer__col">
+                <b>Pagine</b>
+                <a href="trattamenti.html">Trattamenti</a>
+                <a href="chi-siamo.html">Chi siamo</a>
+                <a href="team.html">Team</a>
+                <a href="contatti.html">Contatti</a>
+            </div>
+        </div>
+        <div class="wrap footer__bottom">
+            <span>© <span data-year>2026</span> Studio Kasparian. Tutti i diritti riservati.</span>
+            <a class="footer__top" href="#">Torna su <i class="arrow arrow--up" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js?v=6" defer></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Trattamenti · Studio Kasparian</title>
+    <meta name="description" content="Prevenzione e igiene, chirurgia orale, ortodonzia e medicina del sonno allo Studio Kasparian di Noventa di Piave.">
+    <meta name="theme-color" content="#0A0A0A">
+    <meta property="og:title" content="Trattamenti · Studio Kasparian">
+    <meta property="og:description" content="Prevenzione e igiene, chirurgia orale, ortodonzia e medicina del sonno allo Studio Kasparian di Noventa di Piave.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://studiokasparian.com/images/opt/hero-1920.webp">
+    <script>
+        document.documentElement.classList.add('js');
+        /* una transizione tra pagine interrotta (scheda in secondo piano) non è un errore */
+        ['pagereveal', 'pageswap'].forEach(function (name) {
+            addEventListener(name, function (e) {
+                if (e.viewTransition) { e.viewTransition.ready.catch(function () {}); e.viewTransition.finished.catch(function () {}); }
+            });
+        });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body data-page="trattamenti">
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+
+    <header class="nav" data-nav>
+        <div class="nav__wrap">
+            <a class="logo" href="index.html" aria-label="Studio Kasparian, torna alla home">
+                <img src="images/opt/logo-mark.webp" alt="Dr. Chant Kasparian" width="943" height="75"><span>studio odontoiatrico</span>
+            </a>
+            <nav class="nav__links" aria-label="Principale">
+                <a class="nav__link" href="index.html">Home</a>
+                <a class="nav__link" href="trattamenti.html" aria-current="page">Trattamenti</a>
+                <a class="nav__link" href="chi-siamo.html">Chi siamo</a>
+                <a class="nav__link" href="team.html">Team</a>
+                <a class="nav__link" href="contatti.html">Contatti</a>
+            </nav>
+            <div class="nav__actions">
+                <a class="nav__tel" href="tel:+390421658834" aria-label="Chiama lo studio: 0421 658834">0421 658834</a>
+                <a class="btn btn--primary" href="contatti.html">Prenota</a>
+            </div>
+            <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu">
+                <span></span><span></span>
+            </button>
+        </div>
+        <div class="menu" id="menu" hidden>
+            <nav class="menu__links" aria-label="Menu">
+                <a href="index.html">Home</a>
+                <a href="trattamenti.html" aria-current="page">Trattamenti</a>
+                <a href="chi-siamo.html">Chi siamo</a>
+                <a href="team.html">Team</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+            <div class="menu__actions">
+                <a class="btn btn--primary btn--lg" href="contatti.html">Prenota una visita</a>
+                <a class="btn btn--outline btn--lg" href="tel:+390421658834">Chiama 0421 658834</a>
+            </div>
+        </div>
+    </header>
+    <main id="contenuto">
+        <section class="page-head" data-reveal>
+            <div class="wrap page-head__grid">
+                <h1 class="h1" data-lines>Trattamenti, <span class="dim">con metodi all'avanguardia.</span></h1>
+                <p class="lead after">Offriamo una gamma completa di servizi odontoiatrici per prenderci cura del tuo sorriso a 360 gradi. Scegli un trattamento per vedere come lavoriamo.</p>
+            </div>
+        </section>
+
+        <section class="section section--line" style="padding-top: 72px;">
+            <div class="wrap detail">
+                <div class="tabs" role="tablist" aria-label="Trattamenti" aria-orientation="vertical">
+                    <span class="tabs__bar" aria-hidden="true"></span>
+                    <button class="tab is-active" type="button" role="tab" id="tab-prevenzione" aria-controls="panel-prevenzione" aria-selected="true" tabindex="0" data-tab="prevenzione">Prevenzione e igiene</button>
+                    <button class="tab" type="button" role="tab" id="tab-chirurgia" aria-controls="panel-chirurgia" aria-selected="false" tabindex="-1" data-tab="chirurgia">Chirurgia orale</button>
+                    <button class="tab" type="button" role="tab" id="tab-ortodonzia" aria-controls="panel-ortodonzia" aria-selected="false" tabindex="-1" data-tab="ortodonzia">Ortodonzia</button>
+                    <button class="tab" type="button" role="tab" id="tab-sonno" aria-controls="panel-sonno" aria-selected="false" tabindex="-1" data-tab="sonno">Medicina del sonno</button>
+                </div>
+                <div class="panels">
+                    <article class="panel" role="tabpanel" id="panel-prevenzione" aria-labelledby="tab-prevenzione" data-panel="prevenzione">
+                        <h2 class="panel__title">Prevenzione e igiene</h2>
+                        <p class="lead">La prevenzione moderna combina <strong>igiene professionale</strong>, controllo del biofilm, istruzioni personalizzate e richiami calibrati sul rischio individuale.</p>
+                        <ul class="points">
+                            <li><h3>Protocolli guidati dal rischio</h3><p>Le linee guida EFP indicano un percorso progressivo: controllo dei fattori di rischio, igiene domiciliare mirata, strumentazione professionale e mantenimento periodico.</p></li>
+                            <li><h3>Controllo del biofilm e richiami personalizzati</h3><p>La pulizia professionale viene integrata con strumenti sonici e ultrasonici, motivazione all'igiene e controlli programmati in base a gengive, tartaro e predisposizione del paziente.</p></li>
+                            <li><h3>Fluoro, sigillature e prevenzione della carie</h3><p>Quando indicato, fluoro professionale e sigillature aiutano a ridurre il rischio di carie nelle superfici più vulnerabili.</p></li>
+                        </ul>
+                        <p class="sources">Fonti: <a href="https://www.efp.org/publications-education/clinical-practice-guideline/" target="_blank" rel="noopener">linee guida EFP</a>, <a href="https://www.ada.org/resources/research/science-and-research-institute/oral-health-topics/fluoride" target="_blank" rel="noopener">ADA sul fluoro</a></p>
+                    </article>
+                    <article class="panel" role="tabpanel" id="panel-chirurgia" aria-labelledby="tab-chirurgia" data-panel="chirurgia" hidden>
+                        <h2 class="panel__title">Chirurgia orale</h2>
+                        <p class="lead">La chirurgia orale moderna punta a <strong>diagnosi precisa</strong>, pianificazione digitale e interventi meno invasivi, con attenzione a comfort e guarigione.</p>
+                        <ul class="points">
+                            <li><h3>Scansione 3D della testa e del distretto orale</h3><p>La CBCT, o TAC cone beam, permette una visione tridimensionale di denti, ossa, seni mascellari e strutture nervose, utile nella pianificazione di estrazioni complesse, impianti e chirurgia guidata.</p></li>
+                            <li><h3>Chirurgia guidata digitalmente</h3><p>I dati 3D possono essere usati per valutare volumi ossei, traiettorie implantari e rapporti anatomici prima dell'intervento, migliorando precisione e prevedibilità.</p></li>
+                            <li><h3>Tecniche mini-invasive</h3><p>Quando il caso lo consente, l'approccio mini-invasivo riduce trauma sui tessuti, tempi operatori e fastidio post-operatorio.</p></li>
+                        </ul>
+                        <p class="sources">Fonti: <a href="https://www.aaomr.org/" target="_blank" rel="noopener">AAOMR</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4233862/" target="_blank" rel="noopener">CBCT in odontoiatria</a></p>
+                    </article>
+                    <article class="panel" role="tabpanel" id="panel-ortodonzia" aria-labelledby="tab-ortodonzia" data-panel="ortodonzia" hidden>
+                        <h2 class="panel__title">Ortodonzia</h2>
+                        <p class="lead">L'ortodonzia contemporanea usa diagnosi digitale, simulazioni e <strong>dispositivi personalizzati</strong> per correggere allineamento, funzione e stabilità del sorriso.</p>
+                        <ul class="points">
+                            <li><h3>Allineatori trasparenti Invisalign</h3><p>Gli allineatori Invisalign sono mascherine trasparenti rimovibili progettate digitalmente per spostare gradualmente i denti, con una pianificazione virtuale del trattamento.</p></li>
+                            <li><h3>Scanner intraorale e impronte digitali</h3><p>La scansione digitale riduce la necessità di impronte tradizionali e consente modelli 3D utili per diagnosi, monitoraggio e comunicazione con il paziente.</p></li>
+                            <li><h3>Pianificazione estetico-funzionale</h3><p>Le tecnologie digitali permettono di valutare non solo l'estetica, ma anche occlusione, spazi, rapporti dentali e stabilità finale.</p></li>
+                        </ul>
+                        <p class="sources">Fonti: <a href="https://www.invisalign.com/how-invisalign-works" target="_blank" rel="noopener">Invisalign</a>, <a href="https://aaoinfo.org/whats-trending/what-are-clear-aligners/" target="_blank" rel="noopener">AAO sugli allineatori</a></p>
+                    </article>
+                    <article class="panel" role="tabpanel" id="panel-sonno" aria-labelledby="tab-sonno" data-panel="sonno" hidden>
+                        <h2 class="panel__title">Medicina del sonno</h2>
+                        <p class="lead">La medicina odontoiatrica del sonno si occupa di <strong>russamento e apnee ostruttive</strong>, in collaborazione con il medico specialista quando serve una diagnosi completa.</p>
+                        <ul class="points">
+                            <li><h3>Dispositivi orali su misura</h3><p>Le linee guida AASM/AADSM indicano dispositivi di avanzamento mandibolare personalizzati come opzione terapeutica per pazienti selezionati con apnea ostruttiva del sonno o russamento.</p></li>
+                            <li><h3>Valutazione clinica e digitale</h3><p>La visita odontoiatrica valuta arcate, articolazione mandibolare, usura dentale e spazio orale; la scansione digitale può aiutare nella progettazione del dispositivo.</p></li>
+                            <li><h3>Follow-up e regolazione progressiva</h3><p>Il dispositivo viene controllato e regolato nel tempo per migliorare comfort, efficacia e aderenza al trattamento.</p></li>
+                        </ul>
+                        <p class="sources">Fonti: <a href="https://jcsm.aasm.org/doi/10.5664/jcsm.4858" target="_blank" rel="noopener">linee guida AASM/AADSM</a>, <a href="https://www.nhlbi.nih.gov/health/sleep-apnea/treatment" target="_blank" rel="noopener">NHLBI</a></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--alt section--line" data-reveal>
+            <div class="wrap cta">
+                <div>
+                    <h2 class="h2" data-lines>Pronti a iniziare il tuo percorso di salute dentale?</h2>
+                    <p class="lead after">Prenota subito una visita di consulenza gratuita e scopri come possiamo migliorare il tuo sorriso.</p>
+                    <div class="cta__actions after">
+                        <a class="btn btn--primary btn--lg" href="contatti.html">Prenota ora</a>
+                        <a class="btn btn--outline btn--lg" href="tel:+390421658834">Chiama 0421 658834</a>
+                    </div>
+                </div>
+                <figure class="frame cta__frame">
+                    <img src="images/opt/segreteria.webp" alt="La segreteria dello studio al telefono" width="1180" height="921" loading="lazy">
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer__grid">
+            <a class="logo" href="index.html" aria-label="Studio Kasparian, torna alla home">
+                <img src="images/opt/logo-mark.webp" alt="Dr. Chant Kasparian" width="943" height="75" loading="lazy"><span>studio odontoiatrico</span>
+            </a>
+            <div class="footer__col">
+                <b>Studio</b>
+                <span>Via Roma 57, Noventa di Piave</span>
+                <a href="tel:+390421658834">+39 0421 658834</a>
+                <a href="mailto:studiokasparian@chant.it">studiokasparian@chant.it</a>
+            </div>
+            <div class="footer__col">
+                <b>Pagine</b>
+                <a href="trattamenti.html">Trattamenti</a>
+                <a href="chi-siamo.html">Chi siamo</a>
+                <a href="team.html">Team</a>
+                <a href="contatti.html">Contatti</a>
+            </div>
+        </div>
+        <div class="wrap footer__bottom">
+            <span>© <span data-year>2026</span> Studio Kasparian. Tutti i diritti riservati.</span>
+            <a class="footer__top" href="#">Torna su <i class="arrow arrow--up" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js?v=6" defer></script>
+</body>
+</html>

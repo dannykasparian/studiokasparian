@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Chi siamo · Studio Kasparian</title>
+    <meta name="description" content="Dal 1986 lo studio del Dr. Chant Kasparian è un punto di riferimento per la salute dentale a Noventa di Piave.">
+    <meta name="theme-color" content="#0A0A0A">
+    <meta property="og:title" content="Chi siamo · Studio Kasparian">
+    <meta property="og:description" content="Dal 1986 lo studio del Dr. Chant Kasparian è un punto di riferimento per la salute dentale a Noventa di Piave.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://studiokasparian.com/images/opt/hero-1920.webp">
+    <script>
+        document.documentElement.classList.add('js');
+        /* una transizione tra pagine interrotta (scheda in secondo piano) non è un errore */
+        ['pagereveal', 'pageswap'].forEach(function (name) {
+            addEventListener(name, function (e) {
+                if (e.viewTransition) { e.viewTransition.ready.catch(function () {}); e.viewTransition.finished.catch(function () {}); }
+            });
+        });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body data-page="chi-siamo">
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+
+    <header class="nav" data-nav>
+        <div class="nav__wrap">
+            <a class="logo" href="index.html" aria-label="Studio Kasparian, torna alla home">
+                <img src="images/opt/logo-mark.webp" alt="Dr. Chant Kasparian" width="943" height="75"><span>studio odontoiatrico</span>
+            </a>
+            <nav class="nav__links" aria-label="Principale">
+                <a class="nav__link" href="index.html">Home</a>
+                <a class="nav__link" href="trattamenti.html">Trattamenti</a>
+                <a class="nav__link" href="chi-siamo.html" aria-current="page">Chi siamo</a>
+                <a class="nav__link" href="team.html">Team</a>
+                <a class="nav__link" href="contatti.html">Contatti</a>
+            </nav>
+            <div class="nav__actions">
+                <a class="nav__tel" href="tel:+390421658834" aria-label="Chiama lo studio: 0421 658834">0421 658834</a>
+                <a class="btn btn--primary" href="contatti.html">Prenota</a>
+            </div>
+            <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu">
+                <span></span><span></span>
+            </button>
+        </div>
+        <div class="menu" id="menu" hidden>
+            <nav class="menu__links" aria-label="Menu">
+                <a href="index.html">Home</a>
+                <a href="trattamenti.html">Trattamenti</a>
+                <a href="chi-siamo.html" aria-current="page">Chi siamo</a>
+                <a href="team.html">Team</a>
+                <a href="contatti.html">Contatti</a>
+            </nav>
+            <div class="menu__actions">
+                <a class="btn btn--primary btn--lg" href="contatti.html">Prenota una visita</a>
+                <a class="btn btn--outline btn--lg" href="tel:+390421658834">Chiama 0421 658834</a>
+            </div>
+        </div>
+    </header>
+    <main id="contenuto">
+        <section class="page-head" data-reveal>
+            <div class="wrap page-head__grid">
+                <h1 class="h1" data-lines>Esperienza e passione <span class="dim">al servizio del tuo sorriso.</span></h1>
+                <p class="lead after">Dal <strong>1986</strong> lo studio del Dr. Chant Kasparian è un punto di riferimento per la salute dentale a Noventa di Piave, con un'esperienza che supera i <strong>40 anni</strong> nel settore.</p>
+            </div>
+        </section>
+
+        <section class="section section--line" style="padding-top: 72px;" data-reveal>
+            <div class="wrap about">
+                <figure class="frame about__frame">
+                    <img src="images/opt/about.webp" alt="La sala operativa dello studio" width="1200" height="1280">
+                </figure>
+                <div>
+                    <h2 class="h2" data-lines>Il Dr. Chant Kasparian</h2>
+                    <p class="lead after" style="margin-top: 22px;">Odontoiatra con più di 40 anni di esperienza. Laureato alla ULB (Université Libre de Bruxelles), apre lo studio a Noventa più di 30 anni fa. Master in Francia, Svizzera, USA e Svezia, vanta il premio come Dentista Nobel Biocare.</p>
+                    <ul class="stats after">
+                        <li><span class="num">40+</span><span>anni di esperienza clinica</span></li>
+                        <li><span class="num">1986</span><span>anno di apertura dello studio</span></li>
+                    </ul>
+                    <div class="about__actions after">
+                        <a class="btn btn--outline" href="team.html">Conosci il team</a>
+                        <a class="link" href="contatti.html">Contattaci <i class="arrow" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <span>Igiene professionale</span><i></i><span>Ortodonzia</span><i></i><span>Chirurgia orale</span><i></i><span>Scannerizzazione e TAC 3D</span><i></i><span>Medicina del sonno</span><i></i><span>Dal 1986 a Noventa di Piave</span><i></i><span>Igiene professionale</span><i></i><span>Ortodonzia</span><i></i><span>Chirurgia orale</span><i></i><span>Scannerizzazione e TAC 3D</span><i></i><span>Medicina del sonno</span><i></i><span>Dal 1986 a Noventa di Piave</span><i></i>
+            </div>
+        </div>
+
+        <section class="section section--alt section--line" data-reveal>
+            <div class="wrap cta">
+                <div>
+                    <h2 class="h2" data-lines>Pronti a iniziare il tuo percorso di salute dentale?</h2>
+                    <p class="lead after">Prenota subito una visita di consulenza gratuita e scopri come possiamo migliorare il tuo sorriso.</p>
+                    <div class="cta__actions after">
+                        <a class="btn btn--primary btn--lg" href="contatti.html">Prenota ora</a>
+                        <a class="btn btn--outline btn--lg" href="tel:+390421658834">Chiama 0421 658834</a>
+                    </div>
+                </div>
+                <figure class="frame cta__frame">
+                    <img src="images/opt/segreteria.webp" alt="La segreteria dello studio al telefono" width="1180" height="921" loading="lazy">
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer__grid">
+            <a class="logo" href="index.html" aria-label="Studio Kasparian, torna alla home">
+                <img src="images/opt/logo-mark.webp" alt="Dr. Chant Kasparian" width="943" height="75" loading="lazy"><span>studio odontoiatrico</span>
+            </a>
+            <div class="footer__col">
+                <b>Studio</b>
+                <span>Via Roma 57, Noventa di Piave</span>
+                <a href="tel:+390421658834">+39 0421 658834</a>
+                <a href="mailto:studiokasparian@chant.it">studiokasparian@chant.it</a>
+            </div>
+            <div class="footer__col">
+                <b>Pagine</b>
+                <a href="trattamenti.html">Trattamenti</a>
+                <a href="chi-siamo.html">Chi siamo</a>
+                <a href="team.html">Team</a>
+                <a href="contatti.html">Contatti</a>
+            </div>
+        </div>
+        <div class="wrap footer__bottom">
+            <span>© <span data-year>2026</span> Studio Kasparian. Tutti i diritti riservati.</span>
+            <a class="footer__top" href="#">Torna su <i class="arrow arrow--up" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js?v=6" defer></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Contatti e orari · Studio Kasparian</title>
+    <meta name="description" content="Studio Kasparian, Via Roma 57, Noventa di Piave. Telefono 0421 658834, email studiokasparian@chant.it. Orari di apertura.">
+    <meta name="theme-color" content="#0A0A0A">
+    <meta property="og:title" content="Contatti e orari · Studio Kasparian">
+    <meta property="og:description" content="Studio Kasparian, Via Roma 57, Noventa di Piave. Telefono 0421 658834, email studiokasparian@chant.it. Orari di apertura.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://studiokasparian.com/images/opt/hero-1920.webp">
+    <script>
+        document.documentElement.classList.add('js');
+        /* una transizione tra pagine interrotta (scheda in secondo piano) non è un errore */
+        ['pagereveal', 'pageswap'].forEach(function (name) {
+            addEventListener(name, function (e) {
+                if (e.viewTransition) { e.viewTransition.ready.catch(function () {}); e.viewTransition.finished.catch(function () {}); }
+            });
+        });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body data-page="contatti">
+    <a class="skip" href="#contenuto">Vai al contenuto</a>
+
+    <header class="nav" data-nav>
+        <div class="nav__wrap">
+            <a class="logo" href="index.html" aria-label="Studio Kasparian, torna alla home">
+                <img src="images/opt/logo-mark.webp" alt="Dr. Chant Kasparian" width="943" height="75"><span>studio odontoiatrico</span>
+            </a>
+            <nav class="nav__links" aria-label="Principale">
+                <a class="nav__link" href="index.html">Home</a>
+                <a class="nav__link" href="trattamenti.html">Trattamenti</a>
+                <a class="nav__link" href="chi-siamo.html">Chi siamo</a>
+                <a class="nav__link" href="team.html">Team</a>
+                <a class="nav__link" href="contatti.html" aria-current="page">Contatti</a>
+            </nav>
+            <div class="nav__actions">
+                <a class="nav__tel" href="tel:+390421658834" aria-label="Chiama lo studio: 0421 658834">0421 658834</a>
+                <a class="btn btn--primary" href="contatti.html">Prenota</a>
+            </div>
+            <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu">
+                <span></span><span></span>
+            </button>
+        </div>
+        <div class="menu" id="menu" hidden>
+            <nav class="menu__links" aria-label="Menu">
+                <a href="index.html">Home</a>
+                <a href="trattamenti.html">Trattamenti</a>
+                <a href="chi-siamo.html">Chi siamo</a>
+                <a href="team.html">Team</a>
+                <a href="contatti.html" aria-current="page">Contatti</a>
+            </nav>
+            <div class="menu__actions">
+                <a class="btn btn--primary btn--lg" href="contatti.html">Prenota una visita</a>
+                <a class="btn btn--outline btn--lg" href="tel:+390421658834">Chiama 0421 658834</a>
+            </div>
+        </div>
+    </header>
+    <main id="contenuto">
+        <section class="page-head" data-reveal>
+            <div class="wrap page-head__grid">
+                <h1 class="h1" data-lines>Siamo qui per te. <span class="dim">Contattaci per informazioni.</span></h1>
+                <p class="lead after">Chiama nei giorni lavorativi per fissare un appuntamento, oppure scrivici una email per informazioni specifiche: rispondiamo il prima possibile.</p>
+            </div>
+        </section>
+
+        <section class="section section--line" style="padding-top: 72px;" data-reveal>
+            <div class="wrap">
+                <div class="contact">
+                    <ul class="contact__list">
+                        <li>
+                            <span class="contact__label">Telefono</span>
+                            <a class="contact__value" href="tel:+390421658834">+39 0421 658834</a>
+                            <span class="contact__note">Prenota un appuntamento nei giorni lavorativi</span>
+                        </li>
+                        <li>
+                            <span class="contact__label">Email</span>
+                            <a class="contact__value" href="mailto:studiokasparian@chant.it">studiokasparian@chant.it</a>
+                            <span class="contact__note">Per informazioni specifiche</span>
+                        </li>
+                        <li>
+                            <span class="contact__label">Studio</span>
+                            <span class="contact__value">Via Roma 57, Noventa di Piave</span>
+                            <a class="link" href="https://maps.app.goo.gl/vo4bDdsvtKbMBEDs6" target="_blank" rel="noopener">Ottieni indicazioni <i class="arrow" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                    <div class="hours">
+                        <h2 class="hours__title">Orari dello studio</h2>
+                        <ul class="hours__list">
+                        <li data-schedule-day="1"><b>Lunedì</b><span>14:00 – 19:00</span></li>
+                        <li data-schedule-day="2"><b>Martedì</b><span>9:00 – 13:00</span></li>
+                        <li data-schedule-day="3"><b>Mercoledì</b><span>9:00 – 12:00 · 15:00 – 19:00</span></li>
+                        <li data-schedule-day="4"><b>Giovedì</b><span>9:00 – 12:00 · 15:00 – 19:00</span></li>
+                        <li data-schedule-day="5"><b>Venerdì</b><span>9:00 – 13:00</span></li>
+                        <li data-schedule-day="6" class="is-closed"><b>Sabato</b><span>chiuso</span></li>
+                        <li data-schedule-day="0" class="is-closed"><b>Domenica</b><span>chiuso</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <a class="frame map" href="https://maps.app.goo.gl/vo4bDdsvtKbMBEDs6" target="_blank" rel="noopener" aria-label="Apri la posizione dello studio su Google Maps">
+                    <img src="images/opt/map.webp" alt="" width="1400" height="1049" loading="lazy">
+                    <span class="map__pin"><b>Studio Kasparian</b><span>Via Roma 57 · apri in Google Maps <i class="arrow" aria-hidden="true"></i></span></span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer__grid">
+            <a class="logo" href="index.html" aria-label="Studio Kasparian, torna alla home">
+                <img src="images/opt/logo-mark.webp" alt="Dr. Chant Kasparian" width="943" height="75" loading="lazy"><span>studio odontoiatrico</span>
+            </a>
+            <div class="footer__col">
+                <b>Studio</b>
+                <span>Via Roma 57, Noventa di Piave</span>
+                <a href="tel:+390421658834">+39 0421 658834</a>
+                <a href="mailto:studiokasparian@chant.it">studiokasparian@chant.it</a>
+            </div>
+            <div class="footer__col">
+                <b>Pagine</b>
+                <a href="trattamenti.html">Trattamenti</a>
+                <a href="chi-siamo.html">Chi siamo</a>
+                <a href="team.html">Team</a>
+                <a href="contatti.html">Contatti</a>
+            </div>
+        </div>
+        <div class="wrap footer__bottom">
+            <span>© <span data-year>2026</span> Studio Kasparian. Tutti i diritti riservati.</span>
+            <a class="footer__top" href="#">Torna su <i class="arrow arrow--up" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js?v=6" defer></script>
+</body>
+</html>
