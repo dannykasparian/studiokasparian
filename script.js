@@ -227,6 +227,26 @@
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => moveBar(tabs.find((t) => t.classList.contains('is-active'))));
     }
 
+    /* Scansione 3D (React + three.js): si scarica solo quando la sezione sta per entrare in vista,
+       e solo se il dispositivo regge WebGL e non è in risparmio dati. Altrimenti resta la foto. */
+    const stage = $('[data-scan3d]');
+    if (stage) {
+        let webgl = false;
+        try { const cv = document.createElement('canvas'); webgl = !!(cv.getContext('webgl2') || cv.getContext('webgl')); } catch (err) { webgl = false; }
+        const saveData = navigator.connection && navigator.connection.saveData;
+        if (webgl && !saveData) {
+            const lo = new IntersectionObserver((entries) => {
+                if (!entries.some((e) => e.isIntersecting)) return;
+                lo.disconnect();
+                const sc = document.createElement('script');
+                sc.src = 'assets/scan3d.js?v=7';
+                sc.defer = true;
+                document.head.appendChild(sc);
+            }, { rootMargin: '700px 0px' });
+            lo.observe(stage);
+        }
+    }
+
     /* Anno nel footer */
     const year = $('[data-year]');
     if (year) year.textContent = String(new Date().getFullYear());
